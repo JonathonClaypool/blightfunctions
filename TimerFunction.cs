@@ -18,7 +18,7 @@ namespace blightfunctions
     {
       log.LogInformation("Running!");
       string username = Environment.GetEnvironmentVariable("User"); // todo: urlEncode the username;
-      string password = Environment.GetEnvironmentVariable("password");
+      string password = Environment.GetEnvironmentVariable("password"); // get from app settings.
       Blight blight = new Blight(username, password, log);
             
       string game = Environment.GetEnvironmentVariable("gameID");
