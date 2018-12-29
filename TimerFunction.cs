@@ -17,11 +17,11 @@ namespace blightfunctions
     public static void Run([TimerTrigger("0 0 4,14 * * *")]TimerInfo myTimer, ILogger log)
     {
       log.LogInformation("Running!");
-      string username = "claypooljake%40gmail.com"; // todo: urlEncode the username;
-      string password = "pizza";
+      string username = Environment.GetEnvironmentVariable("username"); // todo: urlEncode the username;
+      string password = Environment.GetEnvironmentVariable("password");
       Blight blight = new Blight(username, password, log);
-      // string game = "6495019052564480"; -- test map
-      string game = "6572885299691520";
+            
+      string game = Environment.GetEnvironmentVariable("gameID");
       var gameState = blight.togglePause(game);
       if (gameState)
       {
