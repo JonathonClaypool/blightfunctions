@@ -17,7 +17,7 @@ namespace blightfunctions
     public static void Run([TimerTrigger("0 0 4,14 * * *")]TimerInfo myTimer, ILogger log)
     {
       log.LogInformation("Running!");
-      string username = Environment.GetEnvironmentVariable("username"); // todo: urlEncode the username;
+      string username = Environment.GetEnvironmentVariable("User"); // todo: urlEncode the username;
       string password = Environment.GetEnvironmentVariable("password");
       Blight blight = new Blight(username, password, log);
             
